@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGIS University in Semarang City</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="src/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="src/main.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+</head>
+<body>
+    <div class="content">
+        <div class="sidebar">
+            <div class="search">
+                <h2>Universities in Semarang City</h2>
+                <input type="text" name="" id="find" placeholder="search..." onkeyup="search()">
+            </div>
+            <div class="university-list">
+                <div id="college1" class="list">
+                    <img src="images/UNDIP.png">
+                    <h3>Universitas Diponegoro (UNDIP)</h3>
+                </div>
+                <div id="college2" class="list">
+                    <img src="images/UNNES.jpg">
+                    <h3>Universitas Negeri Semarang (UNNES)</h3>
+                </div>
+                <div id="college3" class="list">
+                    <img src="images/UIN-Walisongo.jpg">
+                    <h3>UIN Walisongo Semarang</h3>
+                </div>
+                <div id="college4" class="list">
+                    <img src="images/Polines.jpg">
+                    <h3>Politeknik Negeri Semarang (POLINES)</h3>
+                </div>
+                <div id="college5" class="list">
+                    <img src="images/PIP.jpg">
+                    <h3>Politeknik Ilmu Pelayaran Semarang (P3B/BPLP/PIP)</h3>
+                </div>
+                <div id="college6" class="list">
+                    <img src="images/Poltekkes.jpg">
+                    <h3>Politeknik Kesehatan Kemenkes Semarang (POLTEKKES Semarang)</h3>
+                </div>
+                <div id="college7" class="list">
+                    <img src="images/Unisvet.jpg">
+                    <h3>Universitas Ivet (UNISVET)</h3>
+                </div>
+                <div id="college8" class="list">
+                    <img src="images/Udinus.jpg">
+                    <h3>Universitas Dian Nuswantoro (UDINUS)</h3>
+                </div>
+                <div id="college9" class="list">
+                    <img src="images/Unika.png">
+                    <h3>Universitas Katolik Soegijapranata (UNIKA)</h3>
+                </div>
+                <div id="college10" class="list">
+                    <img src="images/USM.jpg">
+                    <h3>Universitas Semarang (USM)</h3>
+                </div>
+                <div id="college11" class="list">
+                    <img src="images/Unisbank.jpg">
+                    <h3>Universitas STIKUBANK (UNISBANK)</h3>
+                </div>
+                <div id="college12" class="list">
+                    <img src="images/Unissula.jpg">
+                    <h3>Universitas Sultan Agung (UNISSULA)</h3>
+                </div>
+                <div id="college13" class="list">
+                    <img src="images/Untag.jpg">
+                    <h3>Universitas 17 Agustus 1945 (UNTAG)</h3>
+                </div>
+                <div id="college14" class="list">
+                    <img src="images/Unimus.jpg">
+                    <h3>Universitas Muhammadiyah Semarang (UNIMUS)</h3>
+                </div>
+                <div id="college15" class="list">
+                    <img src="images/Unwahas.jpg">
+                    <h3>Universitas Wahid Hasyim Semarang (UNWAHAS)</h3>
+                </div>
+                <div id="college16" class="list">
+                    <img src="images/Unaki.jpg">
+                    <h3>Universitas AKI Semarang (UNAKI)</h3>
+                </div>
+                <div id="college17" class="list">
+                    <img src="images/Unpand.jpg">
+                    <h3>Universitas Pandanaran (UNPAND)</h3>
+                </div>
+                <div id="college18" class="list">
+                    <img src="images/Stekom.jpg">
+                    <h3>Sekolah Tinggi Ilmu Elektronika dan Komputer Semarang (STEKOM)</h3>
+                </div>
+                <div id="college19" class="list">
+                    <img src="images/STEIE-DA.jpg">
+                    <h3>STIE Dharma Putra</h3>
+                </div>
+                <div id="college20" class="list">
+                    <img src="images/STEIE-WM.jpg">
+                    <h3>Sekolah Tinggi Ilmu Ekonomi Widya Manggala Semarang</h3>
+                </div>
+                <div id="college21" class="list">
+                    <img src="images/STEIE-BBJ.jpg">
+                    <h3>Sekolah Tinggi Ilmu Ekonomi Bank BPD Jateng</h3>
+                </div>
+                <div id="college22" class="list">
+                    <img src="images/STMIK.jpg">
+                    <h3>STMIK ProVisi IT College</h3>
+                </div>
+                <div id="college23" class="list">
+                    <img src="images/AKABA.png">
+                    <h3>AKABA 17 Agustus 1945</h3>
+                </div>
+                <div id="college24" class="list">
+                    <img src="images/Itesa.jpeg">
+                    <h3>Institut Teknologi Statistika dan Bisnis Muhammadiyah (ITESA Muhammadiyah) Semarang</h3>
+                </div>
+                <div id="college25" class="list">
+                    <img src="images/Amika.jpeg">
+                    <h3>Akademi Manajemen Informatika dan Komputerisasi Akuntansi JTC Semarang</h3>
+                </div>
+                <div id="college26" class="list">
+                    <img src="images/Akpol.jpg">
+                    <h3>Akademi Kepolisian (Akpol)</h3>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="sidebar">
+            <ul class="list"></ul>
+        </div> -->
+        <div id="map"></div>
+    </div>
+</body>
+<script src="data/pt_semarang.js"></script>
+<script src="index.js"></script>
+<script src="flyTo.js"></script>
+<script></script>
+</html>
